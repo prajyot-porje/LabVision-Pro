@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧬 LabVision Pro
+
+LabVision Pro is an AI-powered web application for analyzing medical lab reports. Upload images (PNG, JPG, JPEG) or PDF files and receive instant, professional analysis with abnormal value detection and color-coded results. Lab reports are processed using OCR and sent securely to the Gemini AI model for analysis.
+
+## Features
+
+- 📄 **Smart Upload:** Drag-and-drop support for images and PDFs (up to 10MB)
+- ⚡ **Instant Analysis:** Real-time parsing and abnormal value detection using OCR and AI
+- 📊 **Professional Results:** Color-coded, easy-to-read tables for lab values
+- 📱 **Responsive Design:** Works seamlessly on all devices
+- 🔒 **Authentication:** Secure sign-in/sign-up with Clerk
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Tesseract.js (OCR)
+- Clerk (Authentication)
+- Google Gemini API (AI analysis)
+- React PDF (PDF parsing)
+- Lucide React (Icons)
+
+## Data Privacy
+
+> **Note:** Uploaded lab reports are processed using OCR in your browser and then sent securely to the Gemini API for AI-powered analysis. Do not upload sensitive personal information unless you are comfortable with this data flow.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
 
-```bash
+```sh
+git clone https://github.com/prajyot-porje/LabVision-Pro.git
+cd labvision-pro
+```
+
+### 2. Install dependencies
+
+```sh
+npm install
+# or
+yarn install
+```
+
+### 3. Configure environment variables
+
+Copy the example below into a `.env.local` file and fill in your API keys:
+
+<details>
+<summary><strong>.env.example</strong></summary>
+
+```env
+# Google Gemini API Key
+GEMINI_API_KEY=your-gemini-api-key-here
+
+# Clerk (Authentication) Keys
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+CLERK_SECRET_KEY=your-clerk-secret-key
+
+# Clerk Auth URLs (optional, for custom routing)
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+```
+</details>
+
+### 4. Run the development server
+
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Sign up or sign in.
+2. Upload your lab report (image or PDF).
+3. Wait for instant AI-powered analysis.
+4. View results in a color-coded, professional table.
 
-## Learn More
+> **Disclaimer:** This tool is for educational and project purposes only. Do not rely on it for medical decisions. Always consult a healthcare professional.
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Next.js app directory (pages, layouts)
+- `components/` — UI and custom React components
+- `lib/` — Utility functions
+- `public/` — Static assets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2025 LabVision Pro. All rights reserved.
