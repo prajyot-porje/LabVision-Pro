@@ -15,8 +15,9 @@ Instructions:
 - Extract every possible lab test result from the text, even if some information is missing.
 - If a normal range or unit is not provided, use your knowledge to infer it.
 - If you cannot determine the status, set it to "unknown".
+- If the provided text is not a medical lab report or does not contain any lab test results, return the JSON string: "NOT_LAB_REPORT".
 - Return your answer as a JSON array, with each result as an object in the array.
-- Do not include any explanations or extra text, only the JSON array.
+- Do not include any explanations or extra text, only the JSON array or the keyword as a JSON string.
 - After the array, return an object with:
   - "normalCount": the number of results with status "normal"
   - "statusSummary": an object with the count of each status ("normal", "high", "low", "unknown")

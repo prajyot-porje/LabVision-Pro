@@ -174,6 +174,16 @@ export default function LabAnalyzer() {
 
       setExtractedText(text);
       const results = await analyzeLabReport(text);
+      if (typeof results === "string" && results === "NOT_LAB_REPORT") {
+        setAlert({
+          open: true,
+          title: "Invalid Report",
+          msg: "The uploaded file does not appear to be a valid medical lab report. Please upload a proper lab report.",
+        });
+        setLabResults([]);
+        return;
+      }
+
       setLabResults(results);
     } catch (err: any) {
       setError(err.message || "Processing failed");
